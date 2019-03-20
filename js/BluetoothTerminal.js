@@ -239,8 +239,6 @@ class BluetoothTerminal {
    * @private
    */
   _requestBluetoothDevice() {
-    this._log('"' + this.serviceUuid + '" is the service');
-    this._log('"' + this._serviceUuid + '" is the service used');
     this._log('Requesting bluetooth device...');
     return navigator.bluetooth.requestDevice({
       filters: [{services: [this._serviceUuid]}],
