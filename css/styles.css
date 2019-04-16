@@ -20,17 +20,18 @@ body {
 button {
   background: none;
   border: none;
-  color: rgba(0, 0, 0, 0.87);
   cursor: pointer;
-  margin: 0;
-  padding: 12px;
+  display: flex;
+    justify-content: center;
   transition: background 0.3s, color 0.3s;
   user-select: none; }
   button:active {
     background: rgba(0, 0, 0, 0.12);
     color: rgba(0, 0, 0, 0.54); }
   button i.material-icons {
-    vertical-align: middle; }
+    vertical-align: middle; 
+    align: middle;
+  }
 
 .toolbar {
   align-items: center;
@@ -44,6 +45,11 @@ button {
     flex-shrink: 0; }
     .toolbar .buttons button {
       float: left; }
+
+.icon{
+	display: flex;
+	justify-content: center;
+}
 
 .terminal {
   border: 1px solid rgba(0, 0, 0, 0.12);
