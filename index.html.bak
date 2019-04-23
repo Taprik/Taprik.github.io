@@ -48,11 +48,11 @@
           <tr>
             <td style="width: 25%; background-color: #056B68; height: 200px;">
               <div class="icon">
-                <div class="button"> <img src="Imgs/Fichier%206.png" alt="user_symbol"
+                <div class="buttons"> <button id="connect" type="button" aria-label="Connect"><img
 
-                    id="connect" type="button" style="background-color: #056B68"
+                      src="Imgs/Fichier%206.png" alt="user_symbol" style="background-color: #056B68"
 
-                    border="0"></div>
+                      border="0"></button></div>
               </div>
             </td>
             <td style="width: 75%; background-color: #059898; height: 200px;">
@@ -70,7 +70,7 @@
           </tr>
         </tbody>
       </table>
-      <table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+      <table style="width: 100%;" cellspacing="10px" cellpadding="0" border="0">
         <tbody>
           <tr>
             <td style="width: 25%; background-color: #ffffff; height: 100px;">
