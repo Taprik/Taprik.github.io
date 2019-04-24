@@ -99,6 +99,7 @@
       </table>
       <br>
     </div>
+    <div id="terminal" class="terminal"></div>
     <button type="submit" aria-label="Send" style="height: 68px;"> </button>
     <script src="js/BluetoothTerminal.js"></script>
     <script src="js/main.js"></script>
