@@ -347,3 +347,6 @@ template {
 [hidden] {
   display: none;
 }
+
+@media (max-width: 720px){
+}
