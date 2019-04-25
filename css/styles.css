@@ -81,6 +81,10 @@ canvas.compteur {
     display: block;
     width: 600px;
 	height: 400px;
+	-moz-user-select: none;
+  -webkit-user-select: none;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 .terminal {
