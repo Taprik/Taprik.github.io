@@ -50,8 +50,8 @@ terminal.receive = function(data) {
 	if (elapsedTime>500) elapsedTime = 0;
 	prevTime = maintenant;
 	wattHValue = wattHValue + parseFloat(data)*elapsedTime/1000./3600.;
-	if (watth)dataToShow = wattHValue.toString()+" Wh";
-	else dataToShow = wattHValue.toString()+" kCal";
+	if (watth)dataToShow = wattHValue.toFixed(2)+" Wh";
+	else dataToShow = wattHValue.toFixed(2)+" kCal";
 	energie.innerHTML = dataToShow;
 };
 
@@ -93,12 +93,12 @@ sendForm.addEventListener('submit', (event) => {
 
 WH.addEventListener('click', (event) => {
   watth = true;
-	if (watth === true) logToTerminal("watt heure");
+	energie.style.color = rgb(5, 152, 152);
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
-	if (watth === false) logToTerminal("kilocal");
+	energie.style.color = rgb(102, 102, 102);
 });
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
