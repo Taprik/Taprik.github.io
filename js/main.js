@@ -17,7 +17,13 @@ function drawBase() {
 	ctx.fillStyle = "rgb(0,0,0)";
 	ctx.lineWidth = 1;
 	ctx.beginPath();
-	ctx.arc(300, 50, 50, 0, 2*Math.PI);
+	ctx.arc(300, 200, 190, 0, 2*Math.PI);
+	ctx.stroke(); 
+	ctx.beginPath();
+	ctx.arc(300, 200, 180, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.stroke(); 
+	ctx.beginPath();
+	ctx.arc(300, 200, 150, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
 }
 
