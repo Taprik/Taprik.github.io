@@ -5,6 +5,8 @@ const disconnectButton = document.getElementById('disconnect');
 const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
+const energie = document.getElementById('Eval');
+
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -47,6 +49,7 @@ terminal._log = function(...messages) {
 
 // Implement own send function to log outcoming data to the terminal.
 const send = (data) => {
+	energie.innerHTML = data;
   terminal.send(data).
       then(() => logToTerminal(data, 'out')).
       catch((error) => logToTerminal(error));
@@ -54,11 +57,8 @@ const send = (data) => {
 
 // Bind event listeners to the UI elements.
 connectButton.addEventListener('click', () => {
-  terminal.connect().
-      then(() => {
-        deviceNameLabel.textContent = terminal.getDeviceName() ?
-            terminal.getDeviceName() : defaultDeviceName;
-      });
+  terminal.connect();
+	//TODO : change start to stop button
 });
 
 disconnectButton.addEventListener('click', () => {
