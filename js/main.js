@@ -82,11 +82,11 @@ sendForm.addEventListener('submit', (event) => {
   inputField.focus();
 });
 
-WH.addEventListener('submit', (event) => {
+WH.addEventListener('click', (event) => {
   watth = true;
 });
 
-KC.addEventListener('submit', (event) => {
+KC.addEventListener('click', (event) => {
   watth = false;
 });
 
