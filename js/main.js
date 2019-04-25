@@ -46,8 +46,8 @@ terminal.receive = function(data) {
 	var maintenant = Date.now();
 	var elapsedTime = maintenant - prevTime;
 	prevTime = maintenant;
-	if (watth)dataToShow = prevTime+" Wh";
-	else dataToShow = prevTime+" kCal";
+	if (watth)dataToShow = elapsedTime+" Wh";
+	else dataToShow = elapsedTime+" kCal";
 	energie.innerHTML = dataToShow;
 };
 
@@ -76,7 +76,7 @@ connectButton.addEventListener('click', () => {
 /*disconnectButton.addEventListener('click', () => {
   terminal.disconnect();
   deviceNameLabel.textContent = defaultDeviceName;
-});*/
+});
 
 sendForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -85,7 +85,7 @@ sendForm.addEventListener('submit', (event) => {
 
   inputField.value = '';
   inputField.focus();
-});
+});*/
 
 WH.addEventListener('click', (event) => {
   watth = true;
