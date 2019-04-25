@@ -25,80 +25,55 @@
   <body style="width: 100%;">
     <div class="app">
 	<table style="width: 100%; border:0;" cellspacing="0" cellpadding="0" border="0">
-      <tbody>
-	      <tr>
-      <table style="width: 100%; border:0;" cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-          <tr>
-            <td style="width: 20%; background-color:#C9A302;">
-              <div class="icon"><img src="Imgs/id.png" alt="user_symbol" width="90%" height="90%">
-              </div>
-            </td>
-            <td style="width: 80%;  background-color:#F5CF00">
-                      <p class="gras">Matthieu Penet</p>
-                      <p class="normal">Producteur d'énergie humaine depuis le 02 mars 2019</p>
-            </td>
-          </tr>
-          <tr>
-            <td style="width: 20%; background-color: #056B68;">
-              <div class="icon">
-                <div class="buttons"> <button id="connect" type="button" aria-label="Connect">
-					<img src="Imgs/play.png" alt="user_symbol" style="background-color: #056B68" width="99%" height="99%"
-                      border="0"></button></div>
-              </div>
-            </td>
-            <td style="width: 80%; background-color: #059898;">
-              <div class="energie"> DEMARRER</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-	      </tr>
-	      <tr>
-      <table style="width: 100%;  border:0;">
-        <tbody>
-          <tr>
-            <td style="width: 100%; background-color: #ffffff; color: #059898; height: 200px;">
-              <div class="energie"><p id="Eval"> 3,1 Wh</p></div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-	      </tr>
-	      <tr>
-      <table style="width: 100%;  border:0;" cellspacing="0" cellpadding="0">
-        <tbody>
-          <tr>
-            <td style=" width: 25%;  background-color: #ffffff; ">
-              <div class="icon"><img src="Imgs/ILO.png" alt="ilo_symbol" border="0" width="50%" height="50%"> </div>
-            </td>
-            <td style=" width: 25%; background-color: #ffffff; ">
-              <div class="icon"><button id="wattheure" type="button" aria-label="wattheure"><img src="Imgs/wh.png" alt="ilo_symbol" border="0" width="90%" height="90%"></button> </div>
-            </td>
-            <td style=" width: 25%; background-color: #ffffff; ">
-              <div class="icon"><button id="kilocal" type="button" aria-label="kilocal"><img src="Imgs/kcal.png" alt="ilo_symbol" border="0" width="90%" height="90%"></button> </div>
-            </td>
-            <td style="width: 25%;  background-color: #ffffff; ">
-              <div class="icon"><img src="Imgs/share.png" alt="ilo_symbol" border="0" width="50%" height="50%"> </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-	      </tr>
-	      <tr>
-      <table style="width: 100%;  border:0;" cellspacing="30" cellpadding="0" >
-        <tbody>
-          <tr>
-            <td style="width: 100%; background-color: #ffffff; ">
-              <div class="icon"><img src="Imgs/je_conv.png" alt="ilo_symbol" border="0" width="90%" height="90%"> </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-	      </tr>
-	      </tbody>
-      </table>
-      <br>
+	  <tbody>
+	    <tr>
+	      <td style="width: 20%; background-color:#C9A302;"><div class="icon"><img src="Imgs/id.png" alt="user_symbol" width="90%" height="90%"> </div></td>
+	      <td style="width: 80%;  background-color:#F5CF00"><p class="gras">Matthieu Penet</p>
+	        <p class="normal">Producteur d'énergie humaine depuis le 02 mars 2019</p></td>
+        </tr>
+	    <tr>
+	      <td style="width: 20%; background-color: #056B68;"><div class="icon">
+	        <div class="buttons">
+	          <button id="connect" type="button" aria-label="Connect"> <img src="Imgs/play.png" alt="user_symbol" style="background-color: #056B68" width="99%" height="99%"
+                      border="0"></button>
+            </div>
+	        </div></td>
+	      <td style="width: 80%; background-color: #059898;"><div class="energie"> DEMARRER</div></td>
+        </tr>
+      </tbody>
+	  </table>
+	<table style="width: 100%;  border:0;">
+	  <tbody>
+	    <tr>
+	      <td style="width: 100%; background-color: #ffffff; color: #059898; "><div class="energie">
+	        <p id="Eval"> 3,1 Wh</p>
+	        </div></td>
+        </tr>
+      </tbody>
+	  </table>
+	<canvas  class="compteur" id="canvas"  overflow="hidden"> Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;. </canvas>
+<table style="width: 100%;  border:0;" cellspacing="0" cellpadding="0">
+    <tbody>
+	    <tr>
+	      <td style=" width: 25%;  background-color: #ffffff; "><div class="icon"><img src="Imgs/ILO.png" alt="ilo_symbol" border="0" width="50%" height="50%"></div></td>
+	      <td style=" width: 25%; background-color: #ffffff; "><div class="icon">
+	        <button id="wattheure" type="button" aria-label="wattheure"><img src="Imgs/wh.png" alt="ilo_symbol" border="0" width="90%" height="90%"></button>
+	        </div></td>
+	      <td style=" width: 25%; background-color: #ffffff; "><div class="icon">
+	        <button id="kilocal" type="button" aria-label="kilocal"><img src="Imgs/kcal.png" alt="ilo_symbol" border="0" width="90%" height="90%"></button>
+	        </div></td>
+	      <td style="width: 25%;  background-color: #ffffff; "><div class="icon"><img src="Imgs/share.png" alt="ilo_symbol" border="0" width="50%" height="50%"></div></td>
+        </tr>
+    </tbody>
+	  </table>
+	<table style="width: 100%;  border:0;" cellspacing="30" cellpadding="0" >
+	  <tbody>
+	    <tr>
+	      <td style="width: 100%; background-color: #ffffff; "><div class="icon"><img src="Imgs/je_conv.png" alt="ilo_symbol" border="0" width="90%" height="90%"></div></td>
+        </tr>
+      </tbody>
+	  </table>
+<br>
     </div>
     <div id="terminal" class="terminal"></div>
     <button type="submit" aria-label="Send" style="height: 68px;"> </button>

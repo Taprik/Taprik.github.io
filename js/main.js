@@ -9,6 +9,18 @@ const energie = document.getElementById('Eval');
 const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+drawBase();
+
+function drawBase() {
+	ctx.fillStyle = "rgb(0,0,0)";
+	ctx.lineWidth = 1;
+	ctx.beginPath();
+	ctx.arc(60, 6, 50, 0, 2*Math.PI);
+	ctx.stroke(); 
+}
+
 var watth = true;
 var prevTime;
 var wattHValue = 0.0;
