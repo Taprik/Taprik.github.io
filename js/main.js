@@ -10,6 +10,8 @@ const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 
 var watth = true;
+var prevTime, interval;
+
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -41,8 +43,11 @@ terminal.receive = function(data) {
   //logToTerminal(data, 'in');
 	//on change lla valeur de l'energie
 	var dataToShow = "";
-	if (watth)dataToShow = data+" Wh";
-	else dataToShow = data+" kCal";
+	var maintenant = Date.now();
+	var elapsedTime = maintenant - prevTime;
+	prevTime = maintenant;
+	if (watth)dataToShow = prevTime+" Wh";
+	else dataToShow = prevTime+" kCal";
 	energie.innerHTML = dataToShow;
 };
 
