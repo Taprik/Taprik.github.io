@@ -41,8 +41,8 @@ terminal.receive = function(data) {
   //logToTerminal(data, 'in');
 	//on change lla valeur de l'energie
 	var dataToShow = "";
-	if (watth)dataToShow = data+"Wh";
-	else dataToShow = data+"kCal";
+	if (watth)dataToShow = data+" Wh";
+	else dataToShow = data+" kCal";
 	energie.innerHTML = dataToShow;
 };
 
@@ -68,10 +68,10 @@ connectButton.addEventListener('click', () => {
 	//TODO : change start to stop button
 });
 
-disconnectButton.addEventListener('click', () => {
+/*disconnectButton.addEventListener('click', () => {
   terminal.disconnect();
   deviceNameLabel.textContent = defaultDeviceName;
-});
+});*/
 
 sendForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -84,10 +84,12 @@ sendForm.addEventListener('submit', (event) => {
 
 WH.addEventListener('click', (event) => {
   watth = true;
+	logToTerminal("watt heure");
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
+	logToTerminal("kilocal");
 });
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
