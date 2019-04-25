@@ -93,12 +93,12 @@ sendForm.addEventListener('submit', (event) => {
 
 WH.addEventListener('click', (event) => {
   watth = true;
-	logToTerminal("watt heure");
+	if (watth) logToTerminal("watt heure");
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
-	logToTerminal("kilocal");
+	if (!watth) logToTerminal("kilocal");
 });
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
