@@ -53,9 +53,9 @@ input[type="button"]{
       display: flex;
   justify-content: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 36px;
+    font-size: 46px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 0;
  }
 
 .toolbar {
@@ -80,7 +80,7 @@ canvas.compteur {
     margin: auto;
     display: block;
     width: 600px;
-	height: 400px;
+	height: 300px;
 	-moz-user-select: none;
   -webkit-user-select: none;
   max-width: 100% !important;
