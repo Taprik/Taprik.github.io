@@ -50,8 +50,13 @@ terminal.receive = function(data) {
 	if (elapsedTime>500) elapsedTime = 0;
 	prevTime = maintenant;
 	wattHValue = wattHValue + parseFloat(data)*elapsedTime/1000./3600.;
-	if (watth)dataToShow = wattHValue.toFixed(2)+" Wh";
-	else dataToShow = wattHValue.toFixed(2)+" kCal";
+	if (watth){
+		dataToShow = wattHValue.toFixed(2)+" Wh";
+	}
+	else {
+		wattHValue = wattHValue*0.860421;
+		dataToShow = wattHValue.toFixed(2)+" kCal";
+	}
 	energie.innerHTML = dataToShow;
 };
 
