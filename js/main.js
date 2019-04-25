@@ -10,7 +10,8 @@ const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 
 var watth = true;
-var prevTime, interval;
+var prevTime;
+var wattHValue = 0.0;
 
 
 // Helpers.
@@ -45,9 +46,12 @@ terminal.receive = function(data) {
 	var dataToShow = "";
 	var maintenant = Date.now();
 	var elapsedTime = maintenant - prevTime;
+	if isNaN(elapsedTime) elapsedTime = 0;
+	if (elapsedTime>500) elapsedTime = 0;
 	prevTime = maintenant;
-	if (watth)dataToShow = elapsedTime+" Wh";
-	else dataToShow = elapsedTime+" kCal";
+	wattHValue = wattHValue + parseFloat(data)*elapsedTime/1000./3600.;
+	if (watth)dataToShow = wattHValue.toString()+" Wh";
+	else dataToShow = wattHValue.toString()+" kCal";
 	energie.innerHTML = dataToShow;
 };
 
