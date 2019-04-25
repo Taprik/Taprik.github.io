@@ -35,7 +35,8 @@ const terminal = new BluetoothTerminal();
 
 // Override `receive` method to log incoming data to the terminal.
 terminal.receive = function(data) {
-  logToTerminal(data, 'in');
+  //logToTerminal(data, 'in');
+	energie.innerHTML = data;
 };
 
 // Override default log method to output messages to the terminal and console.
@@ -49,10 +50,9 @@ terminal._log = function(...messages) {
 
 // Implement own send function to log outcoming data to the terminal.
 const send = (data) => {
-	energie.innerHTML = data;
-  /*terminal.send(data).
+  terminal.send(data).
       then(() => logToTerminal(data, 'out')).
-      catch((error) => logToTerminal(error));*/
+      catch((error) => logToTerminal(error));
 };
 
 // Bind event listeners to the UI elements.
