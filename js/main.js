@@ -6,10 +6,10 @@ const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
 const energie = document.getElementById('Eval');
-//const WH = document.getElementById('wattheure');
-//const KC = document.getElementById('kilocal');
+const WH = document.getElementById('wattheure');
+const KC = document.getElementById('kilocal');
 
-Boolean watth = true;
+var watth = true;
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -82,13 +82,13 @@ sendForm.addEventListener('submit', (event) => {
   inputField.focus();
 });
 
-/*WH.addEventListener('click', (event) => {
+WH.addEventListener('click', (event) => {
   watth = true;
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
-});*/
+});
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
 terminalContainer.addEventListener('scroll', () => {
