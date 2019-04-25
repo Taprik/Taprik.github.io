@@ -44,7 +44,8 @@ input[type="button"]{
     position: relative; 
     bottom: 0; 
     right: 0; 
-    text-align:right
+    text-align:right;
+	line-height: 0%;
 }
 
 
