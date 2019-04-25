@@ -6,10 +6,10 @@ const terminalContainer = document.getElementById('terminal');
 const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
 const energie = document.getElementById('Eval');
-/*const WH = document.getElementById('wattheure');
+const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 
-var watth = true;*/
+var watth = true;
 
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -40,10 +40,10 @@ const terminal = new BluetoothTerminal();
 terminal.receive = function(data) {
   //logToTerminal(data, 'in');
 	//on change lla valeur de l'energie
-	String dataToShow;
-	/*if (watth)dataToShow = data+"Wh";
+	var dataToShow = "";
+	if (watth)dataToShow = data+"Wh";
 	else dataToShow = data+"kCal";
-	energie.innerHTML = dataToShow;*/
+	energie.innerHTML = dataToShow;
 };
 
 // Override default log method to output messages to the terminal and console.
@@ -82,13 +82,13 @@ sendForm.addEventListener('submit', (event) => {
   inputField.focus();
 });
 
-/*WH.addEventListener('click', (event) => {
+WH.addEventListener('click', (event) => {
   watth = true;
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
-});*/
+});
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
 terminalContainer.addEventListener('scroll', () => {
