@@ -11,19 +11,27 @@ const KC = document.getElementById('kilocal');
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
+var gradient = ctx.createLinearGradient(0, 0, 170, 0);
+gradient.addColorStop("0", "magenta");
+gradient.addColorStop("1.0", "red");
 drawBase();
 
 function drawBase() {
 	ctx.fillStyle = "rgb(0,0,0)";
 	ctx.lineWidth = 1;
 	ctx.beginPath();
-	ctx.arc(300, 150, 145, 0, 2*Math.PI);
+	ctx.arc(300, 180, 179, 0, 2*Math.PI);
 	ctx.stroke(); 
 	ctx.beginPath();
-	ctx.arc(300, 150, 138, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.arc(300, 180, 175, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
 	ctx.beginPath();
-	ctx.arc(300, 150, 120, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.arc(300, 180, 155, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.stroke(); 
+	ctx.lineWidth = 19;
+	ctx.strokeStyle = "#059898";
+	ctx.beginPath();
+	ctx.arc(300, 180, 165, 0.75*Math.PI, 1.25*Math.PI);
 	ctx.stroke(); 
 }
 
