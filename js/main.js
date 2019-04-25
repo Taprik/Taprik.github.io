@@ -93,12 +93,12 @@ sendForm.addEventListener('submit', (event) => {
 
 WH.addEventListener('click', (event) => {
   watth = true;
-	energie.style.color = rgb(5, 152, 152);
+	energie.style.color = "rgb(5, 152, 152)";
 });
 
 KC.addEventListener('click', (event) => {
   watth = false;
-	energie.style.color = rgb(102, 102, 102);
+	energie.style.color = "rgb(102, 102, 102)";
 });
 
 // Switch terminal auto scrolling if it scrolls out of bottom.
