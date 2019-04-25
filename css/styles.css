@@ -48,6 +48,14 @@ input[type="button"]{
 	line-height: 0%;
 }
 
+.demarrer{
+      display: flex;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0;
+ } 
 
 .energie{
       display: flex;
