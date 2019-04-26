@@ -8,32 +8,80 @@ const inputField = document.getElementById('input');
 const energie = document.getElementById('Eval');
 const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
-
+//le canvas 'affichage de la puissance'
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var gradient = ctx.createLinearGradient(0, 0, 170, 0);
-gradient.addColorStop("0", "magenta");
-gradient.addColorStop("1.0", "red");
+var someColors = [];
+someColors.push('#65C8D0');
+someColors.push('#244B4E');
 drawBase();
 
 function drawBase() {
-	ctx.fillStyle = "rgb(0,0,0)";
+	ctx.strokeStyle = "rgb(0,0,0)";
 	ctx.lineWidth = 1;
 	ctx.beginPath();
 	ctx.arc(300, 180, 179, 0, 2*Math.PI);
 	ctx.stroke(); 
+	ctx.lineWidth = 2;
+	ctx.beginPath();
+	ctx.arc(300, 180, 6, 0, 2*Math.PI);
+	ctx.stroke();
+	ctx.lineWidth = 1;
 	ctx.beginPath();
 	ctx.arc(300, 180, 175, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
 	ctx.beginPath();
 	ctx.arc(300, 180, 155, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
-	ctx.lineWidth = 19;
-	ctx.strokeStyle = "#059898";
 	ctx.beginPath();
-	ctx.arc(300, 180, 165, 0.75*Math.PI, 1.25*Math.PI);
+	ctx.moveTo(300+Math.cos(0.75*Math.PI)*175, 180+Math.sin(0.75*Math.PI)*175);
+	ctx.lineTo(300+Math.cos(0.75*Math.PI)*155, 180+Math.sin(0.75*Math.PI)*155);
+	ctx.stroke(); 
+	ctx.beginPath();
+	ctx.moveTo(300+Math.cos(2.25*Math.PI)*175, 180+Math.sin(2.25*Math.PI)*175);
+	ctx.lineTo(300+Math.cos(2.25*Math.PI)*155, 180+Math.sin(2.25*Math.PI)*155);
+	ctx.stroke(); 
+	//
+	//drawJauge(300, 180, 165, someColors, 0.2);
+}
+
+function drawJauge(xc, yc, r, radientColors, pourcent) {
+    var partLength = (1.5 * Math.PI)*pourcent;
+    const start = 0.75*Math.PI;
+    var gradient = null;
+    var startColor = null,
+        endColor = null;
+
+        startColor = radientColors[0];
+        endColor = radientColors[1];
+
+        // x start / end of the next arc to draw
+        var xStart = xc + Math.cos(start) * r;
+        var xEnd = xc + Math.cos(start + partLength) * r;
+        // y start / end of the next arc to draw
+        var yStart = yc + Math.sin(start) * r;
+        var yEnd = yc + Math.sin(start + partLength) * r;
+
+        ctx.beginPath();
+
+        gradient = ctx.createLinearGradient(xStart, yStart, xEnd, yEnd);
+        gradient.addColorStop(0, startColor);
+        gradient.addColorStop(1.0, endColor);
+
+        ctx.strokeStyle = gradient;
+        ctx.arc(xc, yc, r, start, start + partLength);
+        ctx.lineWidth = 19;
+        ctx.stroke();
+        ctx.closePath();
+
+    ctx.strokeStyle = "rgb(0,0,0)";
+	ctx.beginPath();
+	ctx.moveTo(300+Math.cos(start+partLength)*10, 180+Math.sin(start+partLength)*10);
+	ctx.lineTo(300+Math.cos(start+partLength)*150, 180+Math.sin(start+partLength)*150);
+	ctx.lineWidth = 2;
 	ctx.stroke(); 
 }
+
 
 var watth = true;
 var prevTime;
@@ -80,10 +128,12 @@ terminal.receive = function(data) {
 		dataToShow = wattHValue.toFixed(2)+" Wh";
 	}
 	else {
-		wattHValue = wattHValue*0.860421;
-		dataToShow = wattHValue.toFixed(2)+" kCal";
+		var wattHTokCal = wattHValue*0.860421;
+		dataToShow = wattHTokCal.toFixed(2)+" kCal";
 	}
 	energie.innerHTML = dataToShow;
+	var pourCentPui = parseFloat(data)/100.
+	drawJauge(300, 180, 165, someColors, pourCentPui);
 };
 
 // Override default log method to output messages to the terminal and console.
