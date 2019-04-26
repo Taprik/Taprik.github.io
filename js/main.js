@@ -132,7 +132,9 @@ terminal.receive = function(data) {
 		dataToShow = wattHTokCal.toFixed(2)+" kCal";
 	}
 	energie.innerHTML = dataToShow;
-	var pourCentPui = parseFloat(data)/100.
+	var pourCentPui = Math.min(1.0, parseFloat(data)/100.);
+	ctx.clearRect(0, 0, 600, 300);
+	drawBase();
 	drawJauge(300, 180, 165, someColors, pourCentPui);
 };
 
