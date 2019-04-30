@@ -140,7 +140,7 @@ terminal.receive = function(data) {
 	var pourCentPui = Math.min(1.0, parseFloat(data)/100.);
 	ctx.clearRect(0, 0, 300, 300);
 	drawBase();
-	drawJauge(sizeCanvas, sizeCanvas/2, sizeCanvas/2-15, someColors, pourCentPui);
+	drawJauge(sizeCanvas/2, sizeCanvas/2, sizeCanvas/2-15, someColors, pourCentPui);
 };
 
 // Override default log method to output messages to the terminal and console.
