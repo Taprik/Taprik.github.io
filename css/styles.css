@@ -85,10 +85,10 @@ input[type="button"]{
 
 canvas.compteur {
 	padding: 0;
-    margin: auto;
+    margin: 0;
     display: block;
-    width: 600px;
-	height: 360px;
+    width: 300px;
+	height: 300px;
 	-moz-user-select: none;
   -webkit-user-select: none;
   max-width: 100% !important;
