@@ -8,14 +8,18 @@ const inputField = document.getElementById('input');
 const energie = document.getElementById('Eval');
 const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
+const CV = document.getElementById('conversion');
 //le canvas 'affichage de la puissance'
 var canvas = document.getElementById('canvas');
-const sizeCanvas = 300;
+var sizeCanvas = 300;
+canvas.height = sizeCanvas;
 var ctx = canvas.getContext('2d');
 var someColors = [];
 someColors.push('#65C8D0');
 someColors.push('#244B4E');
 drawBase();
+
+
 
 function drawBase() {
 	ctx.strokeStyle = "rgb(0,0,0)";
@@ -178,6 +182,10 @@ sendForm.addEventListener('submit', (event) => {
 WH.addEventListener('click', (event) => {
   watth = true;
 	energie.style.color = "rgb(5, 152, 152)";
+});
+
+CV.addEventListener('click', (event) => {
+  window.alert("vous allez convertir votre production");
 });
 
 KC.addEventListener('click', (event) => {
