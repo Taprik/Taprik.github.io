@@ -138,9 +138,9 @@ terminal.receive = function(data) {
 	}
 	energie.innerHTML = dataToShow;
 	var pourCentPui = Math.min(1.0, parseFloat(data)/100.);
-	ctx.clearRect(0, 0, 600, 300);
+	ctx.clearRect(0, 0, 300, 300);
 	drawBase();
-	drawJauge(300, 180, 165, someColors, pourCentPui);
+	drawJauge(sizeCanvas, sizeCanvas/2, sizeCanvas/2-15, someColors, pourCentPui);
 };
 
 // Override default log method to output messages to the terminal and console.
