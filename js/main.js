@@ -10,6 +10,7 @@ const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 //le canvas 'affichage de la puissance'
 var canvas = document.getElementById('canvas');
+const sizeCanvas = 360;
 var ctx = canvas.getContext('2d');
 var someColors = [];
 someColors.push('#65C8D0');
@@ -20,26 +21,26 @@ function drawBase() {
 	ctx.strokeStyle = "rgb(0,0,0)";
 	ctx.lineWidth = 1;
 	ctx.beginPath();
-	ctx.arc(300, 180, 179, 0, 2*Math.PI);
+	ctx.arc(sizeCanvas/2, sizeCanvas/2, sizeCanvas/2-1, 0, 2*Math.PI);
 	ctx.stroke(); 
 	ctx.lineWidth = 2;
 	ctx.beginPath();
-	ctx.arc(300, 180, 6, 0, 2*Math.PI);
+	ctx.arc(sizeCanvas/2, sizeCanvas/2, 6, 0, 2*Math.PI);
 	ctx.stroke();
 	ctx.lineWidth = 1;
 	ctx.beginPath();
-	ctx.arc(300, 180, 175, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.arc(sizeCanvas/2, sizeCanvas/2, sizeCanvas/2-5, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
 	ctx.beginPath();
-	ctx.arc(300, 180, 155, 0.75*Math.PI, 2.25*Math.PI);
+	ctx.arc(sizeCanvas/2, sizeCanvas/2, sizeCanvas/2-25, 0.75*Math.PI, 2.25*Math.PI);
 	ctx.stroke(); 
 	ctx.beginPath();
-	ctx.moveTo(300+Math.cos(0.75*Math.PI)*175, 180+Math.sin(0.75*Math.PI)*175);
-	ctx.lineTo(300+Math.cos(0.75*Math.PI)*155, 180+Math.sin(0.75*Math.PI)*155);
+	ctx.moveTo(sizeCanvas/2+Math.cos(0.75*Math.PI)*(sizeCanvas/2-5), sizeCanvas/2+Math.sin(0.75*Math.PI)*(sizeCanvas/2-5));
+	ctx.lineTo(sizeCanvas/2+Math.cos(0.75*Math.PI)*(sizeCanvas/2-25), sizeCanvas/2+Math.sin(0.75*Math.PI)*(sizeCanvas/2-25));
 	ctx.stroke(); 
 	ctx.beginPath();
-	ctx.moveTo(300+Math.cos(2.25*Math.PI)*175, 180+Math.sin(2.25*Math.PI)*175);
-	ctx.lineTo(300+Math.cos(2.25*Math.PI)*155, 180+Math.sin(2.25*Math.PI)*155);
+	ctx.moveTo(sizeCanvas/2+Math.cos(2.25*Math.PI)*(sizeCanvas/2-5), sizeCanvas/2+Math.sin(2.25*Math.PI)*(sizeCanvas/2-5));
+	ctx.lineTo(sizeCanvas/2+Math.cos(2.25*Math.PI)*(sizeCanvas/2-25), sizeCanvas/2+Math.sin(2.25*Math.PI)*(sizeCanvas/2-25));
 	ctx.stroke(); 
 	//
 	//drawJauge(300, 180, 165, someColors, 0.2);
@@ -76,8 +77,8 @@ function drawJauge(xc, yc, r, radientColors, pourcent) {
 
     ctx.strokeStyle = "rgb(0,0,0)";
 	ctx.beginPath();
-	ctx.moveTo(300+Math.cos(start+partLength)*10, 180+Math.sin(start+partLength)*10);
-	ctx.lineTo(300+Math.cos(start+partLength)*150, 180+Math.sin(start+partLength)*150);
+	ctx.moveTo(sizeCanvas/2+Math.cos(start+partLength)*10, sizeCanvas/2+Math.sin(start+partLength)*10);
+	ctx.lineTo(sizeCanvas/2+Math.cos(start+partLength)*(sizeCanvas/2-30), sizeCanvas/2+Math.sin(start+partLength)*(sizeCanvas/2-30));
 	ctx.lineWidth = 2;
 	ctx.stroke(); 
 }
