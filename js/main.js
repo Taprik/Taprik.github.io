@@ -10,7 +10,7 @@ const WH = document.getElementById('wattheure');
 const KC = document.getElementById('kilocal');
 //le canvas 'affichage de la puissance'
 var canvas = document.getElementById('canvas');
-const sizeCanvas = 360;
+const sizeCanvas = 300;
 var ctx = canvas.getContext('2d');
 var someColors = [];
 someColors.push('#65C8D0');
